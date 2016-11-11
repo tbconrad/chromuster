@@ -39,7 +39,7 @@ namespace WidgetTest.Repository
         /// <param name="entity">The entity.</param>
         void Add(T entity);
         /// <summary>
-        /// Deletes the specified value.
+        /// Deletes the specified entity.
         /// </summary>
         /// <param name="value">The value.</param>
         void Delete(int value);

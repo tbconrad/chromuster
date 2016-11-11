@@ -55,7 +55,7 @@ namespace WidgetTest.Repository
         }
 
         /// <summary>
-        /// Des the serialize.
+        /// Deserializes the response stream.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="stream">The stream.</param>
@@ -67,7 +67,7 @@ namespace WidgetTest.Repository
         }
 
         /// <summary>
-        /// Serializes the specified value.
+        /// Serializes the specified entity.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value">The value.</param>

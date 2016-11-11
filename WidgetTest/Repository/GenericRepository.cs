@@ -71,7 +71,7 @@ namespace WidgetTest.Repository
         }
 
         /// <summary>
-        /// Deletes the specified value.
+        /// Deletes the specified entity.
         /// </summary>
         /// <param name="value">The value.</param>
         public void Delete(int value)
