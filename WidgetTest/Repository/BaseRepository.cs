@@ -77,5 +77,10 @@ namespace WidgetTest.Repository
             var retval = _serializer.Serialize<T>(value);
             return retval;
         }
+
+        protected string destabilizer()
+        {
+            return string.Empty;
+        }
     }
 }
