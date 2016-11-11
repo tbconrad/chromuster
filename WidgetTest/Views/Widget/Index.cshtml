@@ -1,0 +1,96 @@
+﻿@model WidgetTest.Model.OrderWidgetViewModel
+@using WidgetTest.Models
+
+@{
+    ViewBag.Title = "Order Widget";
+}
+
+<style>
+    .top-padding{ margin-top: 50px;}
+    .backcolor-red { background:#f9dcdb!important; }  
+    .backcolor-green { background:#e2f9d1!important; }
+    .legend-font { color: #FFFFFF; }
+</style>
+
+@using (Html.BeginForm("Order", "Widget", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal top-padding" }))
+{
+    <fieldset>
+        <legend class="legend-font">Acme Widget Order</legend>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Widgets, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.WidgetId, new SelectList(Model.Widgets, "WidgetId", "NameAndPrice"), "- Select A Widget -", new { @class = "form-control  dropdown" })
+                @Html.ValidationMessageFor(x => x.WidgetId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.States, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.DropDownListFor(model => model.StateId, new SelectList(Model.States, "StateId", "StateName"), "- Select A State -", new { @class = "form-control  dropdown" })
+                @Html.ValidationMessageFor(x => x.StateId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Quantity, new { @class = "form-control", @type = "number", @value = "1", @min = "1" })
+                @Html.ValidationMessageFor(x => x.Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="singlebutton"></label>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary">Calculate Order&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa fa-calculator"></i></button>
+                @*<button class="btn btn-danger" type="button">Calculate Order  <i class="fa fa-envelope"></i></button>*@
+
+            </div>
+        </div>
+    </fieldset>
+}
+
+@if (Model.Calculated)
+{
+    <form class="form-horizontal">
+        <fieldset>
+            <legend class="legend-font">Calculation Complete</legend>
+            <div class="form-group">
+                @Html.LabelFor(model => model.DiscountTotal, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-sm-2">
+                    <div class="input-group">
+                        <span id="inputwithtextPrepend" class="input-group-addon">$</span>
+                        @{
+                            var discountRateFormat = $"{Model.DiscountTotal:0.00}";
+                        }
+                        @Html.TextBoxFor(model => model.DiscountTotal, discountRateFormat, new { @readonly = "true", @class = "form-control pull-right backcolor-green", @placeholder = "placeholder", @type = "text", @dir = "rtl" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.SalesTax, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-sm-2">
+                    <div class="input-group">
+                        <span id="inputwithtextPrepend" class="input-group-addon">$</span>
+                        @{
+                            var taxRateFormat = $"{Model.SalesTax:0.00}";
+                        }
+                        @Html.TextBoxFor(model => model.SalesTax, taxRateFormat, new { @readonly = "true", @class = "form-control pull-right backcolor-red", @placeholder = "placeholder", @type = "text", @dir = "rtl" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-sm-2">
+                    <div class="input-group">
+                        <span id="inputwithtextPrepend" class="input-group-addon">$</span>
+                        @{
+                            var totalFormat = $"{Model.Total:0.00}";
+                        }
+                        @Html.TextBoxFor(model => model.Total, totalFormat, new { @readonly = "true", @class = "form-control pull-right backcolor-red", @placeholder = "placeholder", @type = "text", @dir = "rtl" })
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+    </form>
+    <hr/>
+}

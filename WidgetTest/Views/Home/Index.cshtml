@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!-- Inner Page Content // Start -->
+
+<div class="inner-page">
+    <div class="container">
+        <div class="page-mainbar resume">
+            <!-- Resume Header -->
+            <div class="resume-header">
+                <!-- Image -->
+                <img src="~/img/tim.jpg" class="img-responsive" alt="" />
+                <!-- Heading -->
+                <h2>Tim Conrad</h2>
+                <!-- Paragraph -->
+                <p class="grey">Professional Software Engineer, Business Owner</p>
+            </div>
+            <!-- Resume Content -->
+            <div class="resume-content">
+                <!-- About -->
+                <div class="row">
+                    @*<div class="col-md-2 col-sm-4">*@
+                    <!-- Heading -->
+                    @*<h3><i class="fa fa-angle-right"></i> About Me</h3>
+                        </div>*@
+                    <div class="col-md-12 col-sm-8">
+                        <!-- Resume Details -->
+                        <div class="resume-details br-red animated">
+                            <!-- Heading -->
+                            <h4>Acme Widget Co.</h4>
+                            <span>International Widget Sales</span>
+                            <!-- Paragraph -->
+                            <p>The Acme Widget Co. is a ficticious company used in a programming test case to shocase development expertise in a small WebApi and MVC project.</p>
+                            <p><br/>
+                                Acme Widget Test is a test project for PRA Group of Virginia Beach, VA. This is a coding test to see how the individual
+                                coder tackles a coding problem using WebApi, MVC, Razor and Unit Test technologies. This is a simple Widget Ordering system to allow the user to
+                                select a widget, their state and the quantity of the widget they want to purchase and then calculate discounts, taxes and totals.
+                            </p>
+                            <br />
+                            <br />
+                            <p>
+                                @Html.ActionLink("Order Widgets Now!  \u00BB", "Index", "Widget", null, new { @class = "btn btn-primary btn-lg" })
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Inner Page Content // End -->

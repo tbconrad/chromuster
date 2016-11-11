@@ -1,0 +1,992 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WidgetTest</name>
+    </assembly>
+    <members>
+        <member name="T:WidgetTest.Repository.ISerialization">
+            <summary>
+            Interface ISerialization
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.ISerialization.Serialize``1(System.Object)">
+            <summary>
+            Serializes the specified o.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="o">The o.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:WidgetTest.Repository.ISerialization.DeSerialize``1(System.IO.Stream)">
+            <summary>
+            Des the serialize.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="stream">The stream.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="T:WidgetTest.Repository.RequestMethod">
+            <summary>
+            Class RequestMethod.
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.RequestMethod.getRequest(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Gets the request.
+            </summary>
+            <param name="method">The method.</param>
+            <param name="contentType">Type of the content.</param>
+            <param name="endPoint">The end point.</param>
+            <param name="content">The content.</param>
+            <param name="timeout">The timeout.</param>
+            <returns>WebRequest.</returns>
+        </member>
+        <member name="M:WidgetTest.Repository.RequestMethod.getRequest(System.String,System.String,System.String)">
+            <summary>
+            Gets the request.
+            </summary>
+            <param name="method">The method.</param>
+            <param name="contentType">Type of the content.</param>
+            <param name="endPoint">The end point.</param>
+            <returns>WebRequest.</returns>
+        </member>
+        <member name="M:WidgetTest.Repository.RequestMethod.GetResponseStream(System.Net.WebResponse)">
+            <summary>
+            Gets the response stream.
+            </summary>
+            <param name="response">The response.</param>
+            <returns>Stream.</returns>
+        </member>
+        <member name="M:WidgetTest.Repository.RequestMethod.GetResponseReader(System.Net.WebResponse)">
+            <summary>
+            Gets the response reader.
+            </summary>
+            <param name="response">The response.</param>
+            <returns>StreamReader.</returns>
+        </member>
+        <member name="M:WidgetTest.Repository.RequestMethod.unPackResponse(System.Net.WebResponse)">
+            <summary>
+            Uns the pack response.
+            </summary>
+            <param name="response">The response.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:WidgetTest.Repository.BaseRepository">
+            <summary>
+            Class BaseRepository.
+            </summary>
+        </member>
+        <member name="F:WidgetTest.Repository.BaseRepository.RestService">
+            <summary>
+            The rest service
+            </summary>
+        </member>
+        <member name="F:WidgetTest.Repository.BaseRepository.RequestMethod">
+            <summary>
+            The request method
+            </summary>
+        </member>
+        <member name="F:WidgetTest.Repository.BaseRepository._serializer">
+            <summary>
+            The _serializer
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.BaseRepository.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WidgetTest.Repository.BaseRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.BaseRepository.#ctor(WidgetTest.Repository.ISerialization)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WidgetTest.Repository.BaseRepository"/> class.
+            </summary>
+            <param name="serializer">The serializer.</param>
+        </member>
+        <member name="M:WidgetTest.Repository.BaseRepository.deSerialize``1(System.IO.Stream)">
+            <summary>
+            Des the serialize.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="stream">The stream.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="M:WidgetTest.Repository.BaseRepository.serialize``1(``0)">
+            <summary>
+            Serializes the specified value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value">The value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:WidgetTest.Repository.DiscountRepository">
+            <summary>
+            Class DiscountRepository.
+            </summary>
+            <seealso cref="!:WidgetTest.Repository.GenericRepository&lt;WidgetTest.Models.Discount&gt;" />
+            <seealso cref="T:WidgetTest.Repository.IDiscountRepository" />
+        </member>
+        <member name="M:WidgetTest.Repository.DiscountRepository.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WidgetTest.Repository.DiscountRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.DiscountRepository.New">
+            <summary>
+            News this instance.
+            </summary>
+            <returns>DiscountRepository.</returns>
+        </member>
+        <member name="T:WidgetTest.Repository.GenericRepository`1">
+            <summary>
+            Class GenericRepository.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:WidgetTest.Repository.BaseRepository" />
+            <seealso cref="T:WidgetTest.Repository.IGenericRepository`1" />
+        </member>
+        <member name="M:WidgetTest.Repository.GenericRepository`1.GetAll">
+            <summary>
+            Gets all.
+            </summary>
+            <returns>IQueryable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:WidgetTest.Repository.GenericRepository`1.GetSingle(System.Int32)">
+            <summary>
+            Gets the single.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:WidgetTest.Repository.GenericRepository`1.Add(`0)">
+            <summary>
+            Adds the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:WidgetTest.Repository.GenericRepository`1.Delete(System.Int32)">
+            <summary>
+            Deletes the specified value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:WidgetTest.Repository.GenericRepository`1.Save(`0,System.Int32)">
+            <summary>
+            Saves the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:WidgetTest.Repository.IGenericRepository`1">
+            <summary>
+            Interface IGenericRepository
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:WidgetTest.Repository.IGenericRepository`1.GetAll">
+            <summary>
+            Gets all.
+            </summary>
+            <returns>IQueryable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:WidgetTest.Repository.IGenericRepository`1.GetSingle(System.Int32)">
+            <summary>
+            Gets the single.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:WidgetTest.Repository.IGenericRepository`1.Add(`0)">
+            <summary>
+            Adds the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:WidgetTest.Repository.IGenericRepository`1.Delete(System.Int32)">
+            <summary>
+            Deletes the specified value.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:WidgetTest.Repository.IGenericRepository`1.Save(`0,System.Int32)">
+            <summary>
+            Saves the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:WidgetTest.Repository.IDiscountRepository">
+            <summary>
+            Interface IDiscountRepository
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.IDiscountRepository.New">
+            <summary>
+            News this instance.
+            </summary>
+            <returns>DiscountRepository.</returns>
+        </member>
+        <member name="T:WidgetTest.Repository.IOrderRepository">
+            <summary>
+            Interface IOrderRepository
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.IOrderRepository.New">
+            <summary>
+            News this instance.
+            </summary>
+            <returns>OrderRepository.</returns>
+        </member>
+        <member name="T:WidgetTest.Repository.IStateRepository">
+            <summary>
+            Interface IStateRepository
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.IStateRepository.New">
+            <summary>
+            News this instance.
+            </summary>
+            <returns>StateRepository.</returns>
+        </member>
+        <member name="T:WidgetTest.Repository.ITaxRateRepository">
+            <summary>
+            Interface ITaxRateRepository
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.ITaxRateRepository.New">
+            <summary>
+            News this instance.
+            </summary>
+            <returns>TaxRateRepository.</returns>
+        </member>
+        <member name="T:WidgetTest.Repository.IWidgetRepository">
+            <summary>
+            Interface IWidgetRepository
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.IWidgetRepository.New">
+            <summary>
+            News this instance.
+            </summary>
+            <returns>WidgetRepository.</returns>
+        </member>
+        <member name="T:WidgetTest.Repository.OrderRepository">
+            <summary>
+            Class OrderRepository.
+            </summary>
+            <seealso cref="!:WidgetTest.Repository.GenericRepository&lt;WidgetTest.Models.Order&gt;" />
+            <seealso cref="T:WidgetTest.Repository.IOrderRepository" />
+        </member>
+        <member name="M:WidgetTest.Repository.OrderRepository.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WidgetTest.Repository.OrderRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.OrderRepository.New">
+            <summary>
+            News this instance.
+            </summary>
+            <returns>OrderRepository.</returns>
+        </member>
+        <member name="T:WidgetTest.Repository.StateRepository">
+            <summary>
+            Class StateRepository.
+            </summary>
+            <seealso cref="!:WidgetTest.Repository.GenericRepository&lt;WidgetTest.Models.State&gt;" />
+            <seealso cref="T:WidgetTest.Repository.IStateRepository" />
+        </member>
+        <member name="M:WidgetTest.Repository.StateRepository.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WidgetTest.Repository.StateRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.StateRepository.New">
+            <summary>
+            News this instance.
+            </summary>
+            <returns>StateRepository.</returns>
+        </member>
+        <member name="T:WidgetTest.Repository.TaxRateRepository">
+            <summary>
+            Class TaxRateRepository.
+            </summary>
+            <seealso cref="!:WidgetTest.Repository.GenericRepository&lt;WidgetTest.Models.TaxRate&gt;" />
+            <seealso cref="T:WidgetTest.Repository.ITaxRateRepository" />
+        </member>
+        <member name="M:WidgetTest.Repository.TaxRateRepository.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WidgetTest.Repository.TaxRateRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.TaxRateRepository.New">
+            <summary>
+            News this instance.
+            </summary>
+            <returns>TaxRateRepository.</returns>
+        </member>
+        <member name="T:WidgetTest.Repository.WidgetRepository">
+            <summary>
+            Class WidgetRepository.
+            </summary>
+            <seealso cref="!:WidgetTest.Repository.GenericRepository&lt;WidgetTest.Models.Widget&gt;" />
+            <seealso cref="T:WidgetTest.Repository.IWidgetRepository" />
+        </member>
+        <member name="M:WidgetTest.Repository.WidgetRepository.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WidgetTest.Repository.WidgetRepository"/> class.
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Repository.WidgetRepository.New">
+            <summary>
+            News this instance.
+            </summary>
+            <returns>WidgetRepository.</returns>
+        </member>
+        <member name="T:WidgetTest.Classes.JsonNetSerialization">
+            <summary>
+            Class JsonNetSerialization.
+            </summary>
+            <seealso cref="T:WidgetTest.Repository.ISerialization" />
+        </member>
+        <member name="M:WidgetTest.Classes.JsonNetSerialization.Serialize``1(System.Object)">
+            <summary>
+            Serializes the specified o.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="o">The o.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:WidgetTest.Classes.JsonNetSerialization.DeSerialize``1(System.IO.Stream)">
+            <summary>
+            Des the serialize.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="stream">The stream.</param>
+            <returns>System.Object.</returns>
+        </member>
+        <member name="T:WidgetTest.Controllers.ErrorPageController">
+            <summary>
+            Class ErrorPageController.
+            </summary>
+            <seealso cref="T:System.Web.Mvc.Controller" />
+        </member>
+        <member name="M:WidgetTest.Controllers.ErrorPageController.ErrorMessage">
+            <summary>
+            Errors the message.
+            </summary>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="T:WidgetTest.Controllers.HomeController">
+            <summary>
+            Class HomeController.
+            </summary>
+            <seealso cref="T:System.Web.Mvc.Controller" />
+        </member>
+        <member name="M:WidgetTest.Controllers.HomeController.Index">
+            <summary>
+            Indexes this instance.
+            </summary>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:WidgetTest.Controllers.HomeController.About">
+            <summary>
+            Abouts this instance.
+            </summary>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:WidgetTest.Controllers.HomeController.Contact">
+            <summary>
+            Contacts this instance.
+            </summary>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="T:WidgetTest.Controllers.WidgetController">
+            <summary>
+            Class WidgetController.
+            </summary>
+            <seealso cref="T:System.Web.Mvc.Controller" />
+        </member>
+        <member name="F:WidgetTest.Controllers.WidgetController._widgetRepository">
+            <summary>
+            The widget repository
+            </summary>
+        </member>
+        <member name="F:WidgetTest.Controllers.WidgetController._stateRepository">
+            <summary>
+            The state repository
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Controllers.WidgetController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WidgetTest.Controllers.WidgetController"/> class.
+            </summary>
+        </member>
+        <member name="M:WidgetTest.Controllers.WidgetController.#ctor(WidgetTest.Repository.IWidgetRepository,WidgetTest.Repository.IStateRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WidgetTest.Controllers.WidgetController"/> class.
+            </summary>
+            <param name="widgetRepository">The widget repository.</param>
+            <param name="stateRepository">The state repository.</param>
+        </member>
+        <member name="M:WidgetTest.Controllers.WidgetController.Index">
+            <summary>
+            Indexes this instance.
+            </summary>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:WidgetTest.Controllers.WidgetController.Order(WidgetTest.Model.OrderWidgetViewModel)">
+            <summary>
+            Creates the specified model.
+            </summary>
+            <param name="model">The model.</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:WidgetTest.Controllers.WidgetController.ReloadModel(WidgetTest.Model.OrderWidgetViewModel)">
+            <summary>
+            Reloads the model.
+            </summary>
+            <param name="model">The model.</param>
+        </member>
+        <member name="M:WidgetTest.Controllers.WidgetController.GetStateTaxRate(System.Collections.Generic.IEnumerable{WidgetTest.Models.State},System.Int32)">
+            <summary>
+            Gets the state tax rate.
+            </summary>
+            <param name="states">The states.</param>
+            <param name="id">The identifier.</param>
+            <returns>System.Double.</returns>
+        </member>
+        <member name="M:WidgetTest.Controllers.WidgetController.GetWidgetDiscount(System.Collections.Generic.IEnumerable{WidgetTest.Models.Widget},System.Int32)">
+            <summary>
+            Gets the widget discount.
+            </summary>
+            <param name="widgets">The widgets.</param>
+            <param name="id">The identifier.</param>
+            <returns>System.Double.</returns>
+        </member>
+        <member name="M:WidgetTest.Controllers.WidgetController.GetWidgetBasePrice(System.Collections.Generic.IEnumerable{WidgetTest.Models.Widget},System.Int32)">
+            <summary>
+            Gets the widget base price.
+            </summary>
+            <param name="widgets">The widgets.</param>
+            <param name="id">The identifier.</param>
+            <returns>System.Double.</returns>
+        </member>
+        <member name="M:WidgetTest.Controllers.WidgetController.CalculateTotal(WidgetTest.Model.OrderWidgetViewModel)">
+            <summary>
+            Calculates the total.
+            </summary>
+            <param name="model">The model.</param>
+        </member>
+        <member name="T:WidgetTest.DependencyResolution.StructureMapDependencyScope">
+            <summary>
+            The structure map dependency scope.
+            </summary>
+        </member>
+        <member name="T:WidgetTest.Models.BaseEntity">
+            <summary>
+            Class BaseEntity.
+            </summary>
+        </member>
+        <member name="P:WidgetTest.Models.BaseEntity.CreatedBy">
+            <summary>
+            Gets or sets the created by.
+            </summary>
+            <value>The created by.</value>
+        </member>
+        <member name="P:WidgetTest.Models.BaseEntity.Created">
+            <summary>
+            Gets or sets the date the entry was created.
+            </summary>
+            <value>The created.</value>
+        </member>
+        <member name="P:WidgetTest.Models.BaseEntity.Modified">
+            <summary>
+            Gets or sets the date the entry modified.
+            </summary>
+            <value>The modified.</value>
+        </member>
+        <member name="T:WidgetTest.Models.Discount">
+            <summary>
+            Class Discount.
+            </summary>
+        </member>
+        <member name="P:WidgetTest.Models.Discount.DiscountId">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Discount.DiscountPercentage">
+            <summary>
+            Gets or sets the discount percentage.
+            </summary>
+            <value>The discount percentage.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Discount.Active">
+            <summary>
+            Gets or sets the indicator if this discount is active.
+            </summary>
+            <value>The active.</value>
+        </member>
+        <member name="T:WidgetTest.Models.IBaseEntity">
+            <summary>
+            Interface IBaseEntity
+            </summary>
+        </member>
+        <member name="P:WidgetTest.Models.IBaseEntity.Created">
+            <summary>
+            Gets or sets the created.
+            </summary>
+            <value>The created.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IBaseEntity.CreatedBy">
+            <summary>
+            Gets or sets the created by.
+            </summary>
+            <value>The created by.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IBaseEntity.Modified">
+            <summary>
+            Gets or sets the modified.
+            </summary>
+            <value>The modified.</value>
+        </member>
+        <member name="T:WidgetTest.Models.IDiscount">
+            <summary>
+            Interface IDiscount
+            </summary>
+            <seealso cref="T:WidgetTest.Models.IBaseEntity" />
+        </member>
+        <member name="P:WidgetTest.Models.IDiscount.Active">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:WidgetTest.Models.IDiscount"/> is active.
+            </summary>
+            <value><c>null</c> if [active] contains no value, <c>true</c> if [active]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IDiscount.DiscountId">
+            <summary>
+            Gets or sets the discount identifier.
+            </summary>
+            <value>The discount identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IDiscount.DiscountPercentage">
+            <summary>
+            Gets or sets the discount percentage.
+            </summary>
+            <value>The discount percentage.</value>
+        </member>
+        <member name="T:WidgetTest.Models.IOrder">
+            <summary>
+            Interface IOrder
+            </summary>
+        </member>
+        <member name="P:WidgetTest.Models.IOrder.Discount">
+            <summary>
+            Gets or sets the discount.
+            </summary>
+            <value>The discount.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IOrder.DiscountId">
+            <summary>
+            Gets or sets the discount identifier.
+            </summary>
+            <value>The discount identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IOrder.OrderDate">
+            <summary>
+            Gets or sets the order date.
+            </summary>
+            <value>The order date.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IOrder.OrderId">
+            <summary>
+            Gets or sets the order identifier.
+            </summary>
+            <value>The order identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IOrder.Quantity">
+            <summary>
+            Gets or sets the quantity.
+            </summary>
+            <value>The quantity.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IOrder.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>The state.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IOrder.StateId">
+            <summary>
+            Gets or sets the state identifier.
+            </summary>
+            <value>The state identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IOrder.Widget">
+            <summary>
+            Gets or sets the widget.
+            </summary>
+            <value>The widget.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IOrder.WidgetId">
+            <summary>
+            Gets or sets the widget identifier.
+            </summary>
+            <value>The widget identifier.</value>
+        </member>
+        <member name="T:WidgetTest.Models.IState">
+            <summary>
+            Interface IState
+            </summary>
+            <seealso cref="T:WidgetTest.Models.IBaseEntity" />
+        </member>
+        <member name="P:WidgetTest.Models.IState.StateAbbreviation">
+            <summary>
+            Gets or sets the state abbreviation.
+            </summary>
+            <value>The state abbreviation.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IState.StateId">
+            <summary>
+            Gets or sets the state identifier.
+            </summary>
+            <value>The state identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IState.StateName">
+            <summary>
+            Gets or sets the name of the state.
+            </summary>
+            <value>The name of the state.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IState.TaxRate">
+            <summary>
+            Gets or sets the tax rate.
+            </summary>
+            <value>The tax rate.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IState.TaxRateId">
+            <summary>
+            Gets or sets the tax rate identifier.
+            </summary>
+            <value>The tax rate identifier.</value>
+        </member>
+        <member name="T:WidgetTest.Models.ITaxRate">
+            <summary>
+            Interface ITaxRate
+            </summary>
+            <seealso cref="T:WidgetTest.Models.IBaseEntity" />
+        </member>
+        <member name="P:WidgetTest.Models.ITaxRate.Active">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:WidgetTest.Models.ITaxRate"/> is active.
+            </summary>
+            <value><c>null</c> if [active] contains no value, <c>true</c> if [active]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:WidgetTest.Models.ITaxRate.TaxBaseRate">
+            <summary>
+            Gets or sets the tax base rate.
+            </summary>
+            <value>The tax base rate.</value>
+        </member>
+        <member name="P:WidgetTest.Models.ITaxRate.TaxRateId">
+            <summary>
+            Gets or sets the tax rate identifier.
+            </summary>
+            <value>The tax rate identifier.</value>
+        </member>
+        <member name="T:WidgetTest.Models.IWidget">
+            <summary>
+            Interface IWidget
+            </summary>
+            <seealso cref="T:WidgetTest.Models.IBaseEntity" />
+        </member>
+        <member name="P:WidgetTest.Models.IWidget.Active">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:WidgetTest.Models.IWidget"/> is active.
+            </summary>
+            <value><c>null</c> if [active] contains no value, <c>true</c> if [active]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IWidget.BasePrice">
+            <summary>
+            Gets or sets the base price.
+            </summary>
+            <value>The base price.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IWidget.Discount">
+            <summary>
+            Gets or sets the discount.
+            </summary>
+            <value>The discount.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IWidget.DiscountAvailable">
+            <summary>
+            Gets or sets a value indicating whether [discount available].
+            </summary>
+            <value><c>null</c> if [discount available] contains no value, <c>true</c> if [discount available]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IWidget.DiscountId">
+            <summary>
+            Gets or sets the discount identifier.
+            </summary>
+            <value>The discount identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IWidget.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IWidget.NameAndPrice">
+            <summary>
+            Gets the name and price.
+            </summary>
+            <value>The name and price.</value>
+        </member>
+        <member name="P:WidgetTest.Models.IWidget.WidgetId">
+            <summary>
+            Gets or sets the widget identifier.
+            </summary>
+            <value>The widget identifier.</value>
+        </member>
+        <member name="T:WidgetTest.Models.Order">
+            <summary>
+            Class Order.
+            </summary>
+        </member>
+        <member name="P:WidgetTest.Models.Order.OrderId">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Order.WidgetId">
+            <summary>
+            Gets or sets the widget identifier.
+            </summary>
+            <value>The widget identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Order.Widget">
+            <summary>
+            Gets or sets the widget.
+            </summary>
+            <value>The widget.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Order.StateId">
+            <summary>
+            Gets or sets the state identifier.
+            </summary>
+            <value>The state identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Order.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>The state.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Order.DiscountId">
+            <summary>
+            Gets or sets the discount identifier.
+            </summary>
+            <value>The discount identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Order.Discount">
+            <summary>
+            Gets or sets the discount.
+            </summary>
+            <value>The discount.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Order.OrderDate">
+            <summary>
+            Gets or sets the order date.
+            </summary>
+            <value>The order date.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Order.Quantity">
+            <summary>
+            Gets or sets the quantity.
+            </summary>
+            <value>The quantity.</value>
+        </member>
+        <member name="T:WidgetTest.Models.State">
+            <summary>
+            Class State.
+            </summary>
+        </member>
+        <member name="P:WidgetTest.Models.State.StateId">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.State.StateName">
+            <summary>
+            Gets or sets the name of the state.
+            </summary>
+            <value>The name of the state.</value>
+        </member>
+        <member name="P:WidgetTest.Models.State.StateAbbreviation">
+            <summary>
+            Gets or sets the state abbreviation.
+            </summary>
+            <value>The state abbreviation.</value>
+        </member>
+        <member name="P:WidgetTest.Models.State.TaxRateId">
+            <summary>
+            Gets the tax rate identifier.
+            </summary>
+            <value>The tax rate identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.State.TaxRate">
+            <summary>
+            Gets or sets the tax rate.
+            </summary>
+            <value>The tax rate.</value>
+        </member>
+        <member name="T:WidgetTest.Models.TaxRate">
+            <summary>
+            Class TaxRate.
+            </summary>
+        </member>
+        <member name="P:WidgetTest.Models.TaxRate.TaxRateId">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.TaxRate.TaxBaseRate">
+            <summary>
+            Gets or sets the discount percentage rate.
+            </summary>
+            <value>The discount.</value>
+        </member>
+        <member name="P:WidgetTest.Models.TaxRate.Active">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:WidgetTest.Models.TaxRate"/> is active.
+            </summary>
+            <value><c>null</c> if [active] contains no value, <c>true</c> if [active]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:WidgetTest.Models.Widget">
+            <summary>
+            Class Widget.
+            </summary>
+        </member>
+        <member name="P:WidgetTest.Models.Widget.WidgetId">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Widget.Name">
+            <summary>
+            Gets or sets the widget name.
+            </summary>
+            <value>The name.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Widget.BasePrice">
+            <summary>
+            Gets or sets the base price of the widget.
+            </summary>
+            <value>The base price.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Widget.DiscountAvailable">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:WidgetTest.Models.Widget"/> can be discounted.
+            </summary>
+            <value><c>true</c> if discount; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Widget.DiscountId">
+            <summary>
+            Gets or sets the discount identifier.
+            </summary>
+            <value>The discount identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Widget.Discount">
+            <summary>
+            Gets or sets the discount.
+            </summary>
+            <value>The discount.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Widget.Active">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:WidgetTest.Models.Widget"/> is active.
+            </summary>
+            <value><c>null</c> if [active] contains no value, <c>true</c> if [active]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:WidgetTest.Models.Widget.NameAndPrice">
+            <summary>
+            Gets the name and price.
+            </summary>
+            <value>The name and price.</value>
+        </member>
+        <member name="T:WidgetTest.Model.OrderWidgetViewModel">
+            <summary>
+            Class OrderWidgetViewModel.
+            </summary>
+        </member>
+        <member name="P:WidgetTest.Model.OrderWidgetViewModel.StateId">
+            <summary>
+            Gets or sets the selected state identifier.
+            </summary>
+            <value>The state identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Model.OrderWidgetViewModel.WidgetId">
+            <summary>
+            Gets or sets the selected widget identifier.
+            </summary>
+            <value>The widget identifier.</value>
+        </member>
+        <member name="P:WidgetTest.Model.OrderWidgetViewModel.Quantity">
+            <summary>
+            Gets or sets the quantity of widgets that were requested.
+            </summary>
+            <value>The quantity.</value>
+        </member>
+        <member name="P:WidgetTest.Model.OrderWidgetViewModel.States">
+            <summary>
+            Gets or sets the states collection.
+            </summary>
+            <value>The states.</value>
+        </member>
+        <member name="P:WidgetTest.Model.OrderWidgetViewModel.Widgets">
+            <summary>
+            Gets or sets the widgets collection.
+            </summary>
+            <value>The widgets.</value>
+        </member>
+        <member name="P:WidgetTest.Model.OrderWidgetViewModel.TaxRate">
+            <summary>
+            Gets or sets the tax rate.
+            </summary>
+            <value>The tax rate.</value>
+        </member>
+        <member name="P:WidgetTest.Model.OrderWidgetViewModel.DiscountTotal">
+            <summary>
+            Gets or sets the discount rate.
+            </summary>
+            <value>The discount rate.</value>
+        </member>
+        <member name="P:WidgetTest.Model.OrderWidgetViewModel.WidgetBasePrice">
+            <summary>
+            Gets or sets the widget base price.
+            </summary>
+            <value>The widget base price.</value>
+        </member>
+        <member name="P:WidgetTest.Model.OrderWidgetViewModel.Total">
+            <summary>
+            Gets or sets the total.
+            </summary>
+            <value>The total.</value>
+        </member>
+        <member name="P:WidgetTest.Model.OrderWidgetViewModel.Calculated">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:WidgetTest.Model.OrderWidgetViewModel"/> is calculated.
+            </summary>
+            <value><c>true</c> if calculated; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:WidgetTest.Model.OrderWidgetViewModel.SalesTax">
+            <summary>
+            Gets or sets the sales tax.
+            </summary>
+            <value>The sales tax.</value>
+        </member>
+    </members>
+</doc>

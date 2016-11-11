@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title here -->
+    <title>@ViewBag.Title - Widget Test</title>
+    <!-- Description, Keywords and Author -->
+    <meta name="description" content="Acme Widget Test Case">
+    <meta name="keywords" content="Acme, Widget, Test, Case">
+    <meta name="author" content="Tim Conrad">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/template")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#">
+
+
+</head>
+
+
+
+
+<body>
+    <!-- Body Wrapper -->
+    <div class="wrapper white">
+
+        <!-- Header Start -->
+        <div class="header">
+            <!-- Header Information -->
+            <div class="header-info">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <!-- Social Media -->
+                            <div class="social">
+                                <a href="https://www.facebook.com/conradenterpriseinc/?pnref=lhc" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="https://plus.google.com/b/107437298585412287965/" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                                <a href="https://www.linkedin.com/in/timconrad" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <!-- Contact Info -->
+                            <div class="contact-info">
+                                <span><i class="fa fa-phone br-lblue"></i> <strong>804 - 405 - 2072</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header Navigation -->
+            <div class="header-navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <!-- Logo -->
+                            <div class="logo">
+                                <!-- Heading -->
+                                <h1><a href="@Url.Action("Index","Home")"><i class="fa fa-eye-slash br-red"></i> Acme Widget Co.</a></h1>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <!-- Bootstrap Navbar -->
+                            <nav class="navbar navbar-default" role="navigation">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle br-orange" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li>
+                                            <a href="@Url.Action("Index","Home")" class="br-orange">
+                                                <!-- Link Icon -->
+                                                <i class="fa fa-home link-icon"></i>
+                                                <!-- Link Title -->
+                                                <span class="link-title">Home</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Index","Widget")" class="br-purple">
+                                                <!-- Link Icon -->
+                                                <i class="fa fa-file link-icon"></i>
+                                                <!-- Link Title -->
+                                                <span class="link-title">Order</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("About","Home")" class="br-red">
+                                                <!-- Link Icon -->
+                                                <i class="fa fa-user link-icon"></i>
+                                                <!-- Link Title -->
+                                                <span class="link-title">About</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("Contact","Home")" class="br-yellow">
+                                                <!-- Link Icon -->
+                                                <i class="fa fa-phone link-icon"></i>
+                                                <!-- Link Title -->
+                                                <span class="link-title">Contact</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div><!-- /.navbar-collapse -->
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/template")
+        @RenderSection("scripts", required: false)
+
+        <!-- Footer Start -->
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <!-- Footer Widget -->
+                        <div class="footer-widget">
+                            <!-- Logo Icon -->
+                            <!-- Heading -->
+                            <h2><a href="@Url.Action("Index","Home")"><i class="fa fa-eye-slash logo-icon br-red"></i></a></h2><h3> Acme Widget Co.</h3>
+                            <!-- Paragraph -->
+                            <p>Acme Widget Test is a test project for PRA Group of Virginia Beach, VA. This is a coding test to see how the individual coder tackles a coding problem using WebApi, MVC, Razor and Unit Test technologies.</p>
+                            <!-- Social Media -->
+                            <div class="social">
+                                <a href="https://www.facebook.com/conradenterpriseinc/?pnref=lhc" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="https://plus.google.com/b/107437298585412287965/" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                                <a href="https://www.linkedin.com/in/timconrad" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <!-- Footer Widget -->
+                        <div class="footer-widget">
+                            <!-- Heading -->
+                            <h5><i class="fa fa-plus br-red"></i> Navigation Menu</h5>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <!-- Menu Icons link -->
+                                    <ul class="list-unstyled">
+                                        <li><a href="@Url.Action("Index","Home")"><i class="fa fa-home br-red"></i> Home</a></li>
+                                        <li><a href="@Url.Action("Index","Widget")"><i class="fa fa-book br-yellow"></i> Order</a></li>
+                                        <li><a href="@Url.Action("Contact","Home")"><i class="fa fa-phone br-green"></i> Contact Us</a></li>
+                                        <li><a href="@Url.Action("About","Home")"><i class="fa fa-gear br-lblue"></i> About</a></li>
+                                        @*<li><a href="#"><i class="fa fa-comment br-purple"></i> Testimonial</a></li>*@
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <!-- Menu Icons link -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-sm"></div>
+                    <div class="col-md-3 col-sm-6">
+                        <!-- Footer Widget -->
+                        <div class="footer-widget">
+                            <!-- Heading -->
+                            <h5><i class="fa fa-map-marker br-yellow"></i> Contact Us</h5>
+                            <address>
+                                <i class="fa fa-home br-green"></i> 8 Chase Gayton Dr. Suite 325 <br />
+                                &nbsp; &nbsp; &nbsp; &nbsp; Henrico, Virginia 23238 - 6511 <br />
+                                <span><i class="fa fa-phone br-orange"></i> 804 - 405 - 2072</span>
+                                <span><i class="fa fa-envelope-o br-blue"></i> <a href="mailto:tim@conradenterprise.com">tim@conradenterprise.com</a></span>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <!-- Footer Widget -->
+                        <div class="footer-widget">
+                            <!-- Heading -->
+                            <h5><i class="fa fa-location-arrow br-lblue"></i> Location</h5>
+                            <!-- Google Map -->
+                            <div class="map">
+                                <!-- Image -->
+                                <img src="~/img/map.png" class="img-responsive" alt="" />
+                                <!-- Map Marker -->
+                                @*<i class="fa fa-map-marker marker india lblue"></i>*@
+                                <i class="fa fa-map-marker marker usa orange"></i>
+                                @*<i class="fa fa-map-marker marker africa green"></i>*@
+                            </div>
+                            <span class="location-name">
+                                @*<i class="fa fa-map-marker br-lblue"></i> India &nbsp;&nbsp;*@
+                                <i class="fa fa-map-marker br-orange"></i> USA &nbsp;&nbsp;
+                                @*<i class="fa fa-map-marker br-green"></i> Africa*@
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Copyright -->
+                <div class="footer-copyright">
+                    <p>&copy; Copyright 2016 <a href="http://www.conradenterprise.com" target="_blank"> Conrad Enterprise, Inc.</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer End -->
+
+    </div>
+<!-- Footer End -->
+    <span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span>
+
+</body>
+</html>
