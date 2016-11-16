@@ -21,7 +21,7 @@ namespace WidgetTest.Model
     /// <summary>
     /// Class OrderWidgetViewModel.
     /// </summary>
-    public class OrderWidgetViewModel
+    public class OrderWidgetViewModel : IBaseModel
     {
         /// <summary>
         /// Gets or sets the selected state identifier.
@@ -83,15 +83,33 @@ namespace WidgetTest.Model
         [DisplayName("Grand Total:")]
         public double Total { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="OrderWidgetViewModel"/> is calculated.
-        /// </summary>
-        /// <value><c>true</c> if calculated; otherwise, <c>false</c>.</value>
-        public bool Calculated { get; set; } = false;
-        /// <summary>
         /// Gets or sets the sales tax.
         /// </summary>
         /// <value>The sales tax.</value>
         [DisplayName("Sales Tax:")]
         public double SalesTax { get; set; }
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="IBaseEntity" /> is success.
+        /// </summary>
+        /// <value><c>true</c> if success; otherwise, <c>false</c>.</value>
+        public bool Success { get; set; }
+        /// <summary>
+        /// Gets the result code.
+        /// </summary>
+        /// <value>The result code.</value>
+        public int ResultCode { get; set; }
+        /// <summary>
+        /// Gets the errors.
+        /// </summary>
+        /// <value>The errors.</value>
+        public IList<string> Errors { get; }
+        /// <summary>
+        /// Adds the error.
+        /// </summary>
+        /// <param name="error">The error.</param>
+        public void AddError(string error)
+        {
+            Errors.Add(error);
+        }
     }
 }

@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Collections.Generic;
 
 
 namespace WidgetTest.Models
@@ -19,8 +20,9 @@ namespace WidgetTest.Models
     /// <summary>
     /// Class BaseEntity.
     /// </summary>
-    public class BaseEntity : IBaseEntity
+    public class BaseEntity : IBaseEntity 
     {
+
         /// <summary>
         /// Gets or sets the created by.
         /// </summary>
@@ -36,5 +38,6 @@ namespace WidgetTest.Models
         /// </summary>
         /// <value>The modified.</value>
         public DateTime? Modified { get; set; }
+
     }
 }
