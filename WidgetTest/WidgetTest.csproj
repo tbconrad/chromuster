@@ -161,7 +161,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Discount.cs" />
+    <Compile Include="Models\IBaseModel.cs" />
     <Compile Include="Models\Interface\IBaseEntity.cs" />
     <Compile Include="Models\Interface\IDiscount.cs" />
     <Compile Include="Models\Interface\IOrder.cs" />
