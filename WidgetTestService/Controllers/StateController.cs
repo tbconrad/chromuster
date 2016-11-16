@@ -51,7 +51,7 @@ namespace WidgetTestService.Controllers
         [HttpGet]
         public IQueryable<State> Get()
         {
-            return _db.States.Include("TaxRate").OrderBy(b => b.StateName);
+            return _db.States.Include("TaxRate");
         }
 
         /// <summary>

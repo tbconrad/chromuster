@@ -53,7 +53,7 @@ namespace WidgetTestService.Controllers
         [HttpGet]
         public IQueryable<Widget> Get()
         {
-            return _db.Widgets.Include("Discount").OrderBy(n => n.Name);
+            return _db.Widgets.Include("Discount");
         }
 
         /// <summary>
