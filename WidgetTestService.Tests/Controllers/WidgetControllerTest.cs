@@ -49,9 +49,9 @@ namespace WidgetTestService.Tests.Controllers
         public void GetWidgets_ShouldReturnAllWidgets()
         {
             var context = new TestWidgitContext();
-            context.Widgets.Add(new Widget { Name = "Fasecore-Widget", BasePrice = 34.95, DiscountAvailable = true, CreatedBy = "Tim Conrad", Created = DateTime.Parse("11/8/2016"), DiscountId = 2});
-            context.Widgets.Add(new Widget { Name = "Hothotit-Widget", BasePrice = 24.95, DiscountAvailable = true, CreatedBy = "Tim Conrad", Created = DateTime.Parse("11/8/2016"), DiscountId = 2 });
-            context.Widgets.Add(new Widget { Name = "Indigo Hotstrong-Widget", BasePrice = 14.95, DiscountAvailable = true, CreatedBy = "Tim Conrad", Created = DateTime.Parse("11/8/2016"), DiscountId = 2 });
+            context.Widgets.Add(new Widget { Name = "Fasecore-Widget", BasePrice = 34.95, DiscountAvailable = true, CreatedBy = "Tim Conrad", Created = DateTime.Parse("11/8/2016"), DiscountId = 2, Discount = new Discount { DiscountId = 1, DiscountPercentage = 5, Active = false, CreatedBy = "Tim Conrad", Created = DateTime.Parse("11/8/2016") } });
+            context.Widgets.Add(new Widget { Name = "Hothotit-Widget", BasePrice = 24.95, DiscountAvailable = true, CreatedBy = "Tim Conrad", Created = DateTime.Parse("11/8/2016"), DiscountId = 2, Discount = new Discount { DiscountId = 1, DiscountPercentage = 5, Active = false, CreatedBy = "Tim Conrad", Created = DateTime.Parse("11/8/2016") } });
+            context.Widgets.Add(new Widget { Name = "Indigo Hotstrong-Widget", BasePrice = 14.95, DiscountAvailable = true, CreatedBy = "Tim Conrad", Created = DateTime.Parse("11/8/2016"), DiscountId = 2, Discount = new Discount { DiscountId = 1, DiscountPercentage = 5, Active = false, CreatedBy = "Tim Conrad", Created = DateTime.Parse("11/8/2016") } });
 
 
             var controller = new WidgetController(context);
