@@ -50,6 +50,7 @@ namespace WidgetTest.Controllers
         /// <param name="stateRepository">The state repository.</param>
         public WidgetController(IWidgetRepository widgetRepository, IStateRepository stateRepository)
         {
+           
             _widgetRepository = widgetRepository;
             _stateRepository = stateRepository;
         }
@@ -60,12 +61,14 @@ namespace WidgetTest.Controllers
         /// <returns>ActionResult.</returns>
         public ActionResult Index()
         {
-            var widgets = _widgetRepository.GetAll();
-            var states = _stateRepository.GetAll();
-            OrderWidgetViewModel model = new OrderWidgetViewModel();
+            var widgets = _widgetRepository.GetAll().OrderBy(w => w.Name);
+            var states = _stateRepository.GetAll().OrderBy(s => s.StateName);
+            OrderWidgetViewModel model = new OrderWidgetViewModel
+            {
+                Widgets = widgets,
+                States = states
+            };
 
-            model.Widgets = widgets;
-            model.States = states;
             return View(model);
         }
 
@@ -156,7 +159,7 @@ namespace WidgetTest.Controllers
             model.WidgetBasePrice = widgetBasePrice;
             model.SalesTax = salesTax;
             model.Total = grandTotal;
-            model.Calculated = true;
+            model.Success = true;
         }
 
         ///// <summary>
