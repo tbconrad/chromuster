@@ -32,13 +32,5 @@ namespace WidgetTest.Repository
         public DiscountRepository()
         { }
 
-        /// <summary>
-        /// News this instance.
-        /// </summary>
-        /// <returns>DiscountRepository.</returns>
-        public DiscountRepository New()
-        {
-            return new DiscountRepository();
-        }
     }
 }
