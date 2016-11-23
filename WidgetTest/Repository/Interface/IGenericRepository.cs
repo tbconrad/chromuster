@@ -23,6 +23,13 @@ namespace WidgetTest.Repository
     public interface IGenericRepository<T> where T : class
     {
         /// <summary>
+        /// News this instance.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>T.</returns>
+        T New<T>() where T : new();
+
+        /// <summary>
         /// Gets all.
         /// </summary>
         /// <returns>IQueryable&lt;T&gt;.</returns>
@@ -49,5 +56,6 @@ namespace WidgetTest.Repository
         /// <param name="entity">The entity.</param>
         /// <param name="value">The value.</param>
         void Save(T entity, int value);
+
     }
 }

@@ -21,10 +21,6 @@ namespace WidgetTest.Repository
     /// </summary>
     public interface IWidgetRepository : IGenericRepository<Widget>
     {
-        /// <summary>
-        /// News this instance.
-        /// </summary>
-        /// <returns>WidgetRepository.</returns>
-        WidgetRepository New();
+
     }
 }

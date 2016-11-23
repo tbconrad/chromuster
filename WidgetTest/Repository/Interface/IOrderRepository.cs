@@ -21,10 +21,6 @@ namespace WidgetTest.Repository
     /// </summary>
     public interface IOrderRepository : IGenericRepository<Order>
     {
-        /// <summary>
-        /// News this instance.
-        /// </summary>
-        /// <returns>OrderRepository.</returns>
-        OrderRepository New();
+
     }
 }

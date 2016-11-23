@@ -21,10 +21,6 @@ namespace WidgetTest.Repository
     /// </summary>
     public interface ITaxRateRepository : IGenericRepository<TaxRate>
     {
-        /// <summary>
-        /// News this instance.
-        /// </summary>
-        /// <returns>TaxRateRepository.</returns>
-        TaxRateRepository New();
+
     }
 }

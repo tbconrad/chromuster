@@ -21,10 +21,6 @@ namespace WidgetTest.Repository
     /// </summary>
     public interface IStateRepository : IGenericRepository<State>
     {
-        /// <summary>
-        /// News this instance.
-        /// </summary>
-        /// <returns>StateRepository.</returns>
-        StateRepository New();
+
     }
 }
