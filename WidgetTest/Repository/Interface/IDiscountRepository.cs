@@ -21,10 +21,6 @@ namespace WidgetTest.Repository
     /// </summary>
     public interface IDiscountRepository : IGenericRepository<Discount>
     {
-        /// <summary>
-        /// News this instance.
-        /// </summary>
-        /// <returns>DiscountRepository.</returns>
-        DiscountRepository New();
+
     }
 }
