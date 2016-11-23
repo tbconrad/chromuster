@@ -32,13 +32,5 @@ namespace WidgetTest.Repository
         public OrderRepository()
         { }
 
-        /// <summary>
-        /// News this instance.
-        /// </summary>
-        /// <returns>OrderRepository.</returns>
-        public OrderRepository New()
-        {
-            return new OrderRepository();
-        }
     }
 }

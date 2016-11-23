@@ -27,6 +27,16 @@ namespace WidgetTest.Repository
     public abstract class GenericRepository<T> : BaseRepository, IGenericRepository<T> where T : class
     {
         /// <summary>
+        /// News this instance.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>T.</returns>
+        public T New<T>() where T : new()
+        {
+            return new T();
+        }
+
+        /// <summary>
         /// Gets all.
         /// </summary>
         /// <returns>IQueryable&lt;T&gt;.</returns>

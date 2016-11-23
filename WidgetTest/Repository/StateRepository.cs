@@ -32,13 +32,5 @@ namespace WidgetTest.Repository
         public StateRepository()
         { }
 
-        /// <summary>
-        /// News this instance.
-        /// </summary>
-        /// <returns>StateRepository.</returns>
-        public StateRepository New()
-        {
-            return new StateRepository();
-        }
     }
 }

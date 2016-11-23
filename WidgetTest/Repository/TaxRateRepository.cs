@@ -31,13 +31,5 @@ namespace WidgetTest.Repository
         public TaxRateRepository()
         { }
 
-        /// <summary>
-        /// News this instance.
-        /// </summary>
-        /// <returns>TaxRateRepository.</returns>
-        public TaxRateRepository New()
-        {
-            return new TaxRateRepository();
-        }
     }
 }

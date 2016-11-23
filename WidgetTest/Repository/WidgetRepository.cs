@@ -34,13 +34,5 @@ namespace WidgetTest.Repository
         public WidgetRepository()
         { }
 
-        /// <summary>
-        /// News this instance.
-        /// </summary>
-        /// <returns>WidgetRepository.</returns>
-        public WidgetRepository New()
-        {
-            return new WidgetRepository();
-        }
     }
 }
