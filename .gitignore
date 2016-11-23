@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/packages
+/WidgetTestService.Tests/bin/Debug
+/WidgetTestService.Tests/obj/Debug
+/WidgetTestService.Tests/obj/Release
+/WidgetTestService/bin
+/WidgetTestService/obj/Debug
+/WidgetTestService/obj/Release
+/WidgetTest.Tests/bin/Debug
+/WidgetTest.Tests/obj/Debug
+/WidgetTest.Tests/obj/Release
+/WidgetTest/bin
+/WidgetTest/obj
+/.vs/WidgetTest/bin
+/.vs/WidgetTest/obj

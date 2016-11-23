@@ -130,12 +130,6 @@
             Initializes a new instance of the <see cref="T:WidgetTest.Repository.DiscountRepository"/> class.
             </summary>
         </member>
-        <member name="M:WidgetTest.Repository.DiscountRepository.New">
-            <summary>
-            News this instance.
-            </summary>
-            <returns>DiscountRepository.</returns>
-        </member>
         <member name="T:WidgetTest.Repository.GenericRepository`1">
             <summary>
             Class GenericRepository.
@@ -143,6 +137,13 @@
             <typeparam name="T"></typeparam>
             <seealso cref="T:WidgetTest.Repository.BaseRepository" />
             <seealso cref="T:WidgetTest.Repository.IGenericRepository`1" />
+        </member>
+        <member name="M:WidgetTest.Repository.GenericRepository`1.New``1">
+            <summary>
+            News this instance.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>T.</returns>
         </member>
         <member name="M:WidgetTest.Repository.GenericRepository`1.GetAll">
             <summary>
@@ -182,6 +183,13 @@
             </summary>
             <typeparam name="T"></typeparam>
         </member>
+        <member name="M:WidgetTest.Repository.IGenericRepository`1.New``1">
+            <summary>
+            News this instance.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>T.</returns>
+        </member>
         <member name="M:WidgetTest.Repository.IGenericRepository`1.GetAll">
             <summary>
             Gets all.
@@ -219,55 +227,25 @@
             Interface IDiscountRepository
             </summary>
         </member>
-        <member name="M:WidgetTest.Repository.IDiscountRepository.New">
-            <summary>
-            News this instance.
-            </summary>
-            <returns>DiscountRepository.</returns>
-        </member>
         <member name="T:WidgetTest.Repository.IOrderRepository">
             <summary>
             Interface IOrderRepository
             </summary>
-        </member>
-        <member name="M:WidgetTest.Repository.IOrderRepository.New">
-            <summary>
-            News this instance.
-            </summary>
-            <returns>OrderRepository.</returns>
         </member>
         <member name="T:WidgetTest.Repository.IStateRepository">
             <summary>
             Interface IStateRepository
             </summary>
         </member>
-        <member name="M:WidgetTest.Repository.IStateRepository.New">
-            <summary>
-            News this instance.
-            </summary>
-            <returns>StateRepository.</returns>
-        </member>
         <member name="T:WidgetTest.Repository.ITaxRateRepository">
             <summary>
             Interface ITaxRateRepository
             </summary>
         </member>
-        <member name="M:WidgetTest.Repository.ITaxRateRepository.New">
-            <summary>
-            News this instance.
-            </summary>
-            <returns>TaxRateRepository.</returns>
-        </member>
         <member name="T:WidgetTest.Repository.IWidgetRepository">
             <summary>
             Interface IWidgetRepository
             </summary>
-        </member>
-        <member name="M:WidgetTest.Repository.IWidgetRepository.New">
-            <summary>
-            News this instance.
-            </summary>
-            <returns>WidgetRepository.</returns>
         </member>
         <member name="T:WidgetTest.Repository.OrderRepository">
             <summary>
@@ -281,12 +259,6 @@
             Initializes a new instance of the <see cref="T:WidgetTest.Repository.OrderRepository"/> class.
             </summary>
         </member>
-        <member name="M:WidgetTest.Repository.OrderRepository.New">
-            <summary>
-            News this instance.
-            </summary>
-            <returns>OrderRepository.</returns>
-        </member>
         <member name="T:WidgetTest.Repository.StateRepository">
             <summary>
             Class StateRepository.
@@ -298,12 +270,6 @@
             <summary>
             Initializes a new instance of the <see cref="T:WidgetTest.Repository.StateRepository"/> class.
             </summary>
-        </member>
-        <member name="M:WidgetTest.Repository.StateRepository.New">
-            <summary>
-            News this instance.
-            </summary>
-            <returns>StateRepository.</returns>
         </member>
         <member name="T:WidgetTest.Repository.TaxRateRepository">
             <summary>
@@ -317,12 +283,6 @@
             Initializes a new instance of the <see cref="T:WidgetTest.Repository.TaxRateRepository"/> class.
             </summary>
         </member>
-        <member name="M:WidgetTest.Repository.TaxRateRepository.New">
-            <summary>
-            News this instance.
-            </summary>
-            <returns>TaxRateRepository.</returns>
-        </member>
         <member name="T:WidgetTest.Repository.WidgetRepository">
             <summary>
             Class WidgetRepository.
@@ -334,12 +294,6 @@
             <summary>
             Initializes a new instance of the <see cref="T:WidgetTest.Repository.WidgetRepository"/> class.
             </summary>
-        </member>
-        <member name="M:WidgetTest.Repository.WidgetRepository.New">
-            <summary>
-            News this instance.
-            </summary>
-            <returns>WidgetRepository.</returns>
         </member>
         <member name="T:WidgetTest.Classes.JsonNetSerialization">
             <summary>

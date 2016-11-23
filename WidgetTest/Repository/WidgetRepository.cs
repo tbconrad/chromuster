@@ -17,8 +17,8 @@ using WidgetTest.Models;
 namespace WidgetTest.Repository
 {
 
-#pragma warning disable CS1584
-#pragma warning disable CS1658
+//#pragma warning disable CS1584
+//#pragma warning disable CS1658
     // XML comment has syntactically incorrect cref attribute
     /// <summary>
     /// Class WidgetRepository.
